@@ -3,6 +3,8 @@
 
 import calendar
 import datetime
+import sys
+
 my_calendar = calendar.Calendar()
 months = [1,2,3,4,5,6,7,8,9,10,11,12]
 years = [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020]
@@ -48,4 +50,4 @@ for year in years:
         this_month_workdays, this_month_holidays = show_month(year,month)
         total_workdays += this_month_workdays
         total_holidays += this_month_holidays
-    print str(year) + " год - " + str(total_workdays) + " рабочих дней, " + str(total_holidays) + " выходных"
+    print "%s год - %s рабочих дней, %s выходных" % (str(year), str(total_workdays), str(total_holidays))
