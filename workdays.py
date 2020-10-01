@@ -49,3 +49,8 @@ for year in years:
         total_workdays += this_month_workdays
         total_holidays += this_month_holidays
     print str(year) + " год - " + str(total_workdays) + " рабочих дней, " + str(total_holidays) + " выходных"
+
+def twoChairs(firstChair, secondChair)
+    return print("piki tocheny") if firstChair == True else print("hui drocheny")
+
+twoChairs(False, True)
