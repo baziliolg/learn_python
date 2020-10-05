@@ -14,7 +14,7 @@ def show_month(current_year, current_month):
     workdays_count = 0
     # Define static holidays
     new_year = datetime.date(current_year, 1, 1)
-    feb_23 = datetime.date(current_year, 2, 23)
+    defender_of_ukraine_day = datetime.date(current_year, 10, 14)
     march_8 = datetime.date(current_year, 3, 8)
     
     for date in dates:
@@ -24,17 +24,14 @@ def show_month(current_year, current_month):
                 # Calendar module operates on weeks, so a week may contain previous
                 # or next month's days.
                 # That's why I have to filter those out.
-                if (day == new_year or day == feb_23 or day == march_8) and (day.isoweekday() == 6 or day.isoweekday() == 7):
+                if (day == new_year or day == defender_of_ukraine_day or day == march_8) and (day.isoweekday() == 6 or day.isoweekday() == 7):
                     # static holiday is on weekend
-                    #print str(day) + "        празднег в выходно " + str(day.isoweekday())
                     holidays_count += 1
-                elif (day == new_year or day == feb_23 or day == march_8) and (day.isoweekday() != 6 or day.isoweekday() != 7):
+                elif (day == new_year or day == defender_of_ukraine_day or day == march_8) and (day.isoweekday() != 6 or day.isoweekday() != 7):
                     # static holiday on a regular day
-                    #print str(day) + "        празднег " + str(day.isoweekday())
                     holidays_count += 1
                 elif (day.isoweekday() == 6 or day.isoweekday() == 7):
                     # just a Saturday or Sunday
-                    #print str(day)+ " выходно"
                     holidays_count += 1
                 else:
                     # Workday
@@ -48,4 +45,4 @@ for year in years:
         this_month_workdays, this_month_holidays = show_month(year,month)
         total_workdays += this_month_workdays
         total_holidays += this_month_holidays
-    print str(year) + " год - " + str(total_workdays) + " рабочих дней, " + str(total_holidays) + " выходных"
+    print (str(year) + " рік: " + str(total_workdays) + " робочих та " + str(total_holidays) + " вихідних днів")
